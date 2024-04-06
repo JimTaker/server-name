@@ -938,7 +938,7 @@ new ItemsCost[14][20] =
     { 20,20,35,50,25,25,1},//Шапки
     { 10,10,10,1},//Панамки
     { 8,8,8,15,15,10,30,30,20,20,20,30,1},//Кепки
-    { 20,20,25,25,25,25,1},//Каски\
+    { 20,20,25,25,25,25,1},//Каски
     { 12,18,18,20,25,1},//Береты
     { 22,22,1},//Парики
     { 5,10,5,8,12,15,22,22,22,25,25,25,25,25,18,18,18,30,1},//Очки
@@ -954,7 +954,11 @@ new ItemsCost[14][20] =
 
 #define NAME_SERVER "Maryland Role Play | ЗБТ"
 
-#include ../settings/config
+#define SQL_HOST    		"127.0.0.1"// host
+#define SQL_USER    		"tropiki-user"// пользователь
+#define SQL_PASS    		"tropiki-pass"// пароль
+#define SQL_DB      		"tropiki-mysql"// база данных
+
 //#endif
 
 native IsValidVehicle(vehicleid);
@@ -29287,7 +29291,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		case 501:
 		{
 		    if(!response) return 1;
-		    new i = PlayerInfo[playerid][pGrabTeam];
+		    new i = PlayerInfo[playerid][pGrabTeam],kek;
 		    /*for(new x = 0; x < 3; i++)
 		    {
 		        if(BankGrab[i][bPlayer][x]) continue;
